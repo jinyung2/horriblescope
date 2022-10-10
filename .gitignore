@@ -7,3 +7,7 @@ node_modules
 /.next/
 /out/
 tsconfig.tsbuildinfo
+
+yarn-error.log
+.env
+

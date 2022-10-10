@@ -2,32 +2,23 @@ import Image from "next/image";
 import Link from "next/link";
 import { StarSign } from "../../types/star-sign.types";
 import { Routes } from "../../utils/routes";
+import StarSignSvg from "../svg/star-sign-svg";
 
 import styles from "./star-sign-card.module.scss";
 
 type StarSignCardProps = {
   displayName: StarSign;
-  imagePath: string;
 };
-const StarSignCard: React.FC<StarSignCardProps> = ({
-  displayName,
-  imagePath,
-}) => {
+const StarSignCard: React.FC<StarSignCardProps> = ({ displayName }) => {
   return (
-    <article className={styles.starSignCard}>
+    <div className={styles.starSignCard}>
       <Link href={Routes.starSign(displayName.toLowerCase()).index} passHref>
         <a className={styles.starSignLink}>
-          {displayName}
-          <Image
-            src={imagePath}
-            alt={displayName}
-            width={50}
-            height={50}
-            className={styles.starSignImage}
-          />
+          <h6>{displayName}</h6>
+          <StarSignSvg starSign={displayName} />
         </a>
       </Link>
-    </article>
+    </div>
   );
 };
 

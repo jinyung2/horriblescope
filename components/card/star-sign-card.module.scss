@@ -1,8 +1,49 @@
-.starSignImage {
-  fill: pink;
-  color: pink;
-  img {
-    fill: pink;
-    color: pink;
+@use "@styles/breakpoints";
+
+$starsign-dimension: 32px;
+
+.starSignCard {
+  border: 2px solid var(--color-default);
+  border-radius: var(--border-radius-default);
+  transition: all 0.25s;
+  height: fit-content;
+
+  &:hover {
+    background-color: var(--color-default);
+    color: var(--color-inverse);
+
+    svg {
+      stroke: var(--color-inverse);
+
+      path {
+        stroke: var(--color-inverse);
+      }
+    }
+  }
+}
+
+.starSignLink {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-4);
+  gap: var(--spacing-4);
+
+  h6 {
+    font-weight: var(--font-weight-600);
+  }
+
+  svg {
+    stroke: var(--color-default);
+    width: $starsign-dimension;
+    height: $starsign-dimension;
+
+    path {
+      stroke: var(--color-default);
+    }
+  }
+
+  @include breakpoints.smallerThanTablet {
+    padding: var(--spacing-2);
   }
 }

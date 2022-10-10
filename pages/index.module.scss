@@ -1,8 +1,58 @@
+@use "@styles/breakpoints";
+
 .container {
   max-width: 1440px;
+  width: 100%;
+  padding: var(--spacing-8);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 100%;
+  display: block;
+
+  header {
+    text-align: center;
+  }
+
+  @include breakpoints.smallerThanTablet {
+    padding: var(--spacing-4);
+  }
+}
+
+.mainTextSection {
+  text-align: center;
+
+  h6 {
+    margin: 0;
+    margin-top: var(--spacing-4);
+    margin-bottom: var(--spacing-8);
+
+    strong {
+      background: var(--color-bg-highlight);
+      border-radius: var(--border-radius-subtle);
+      padding: 0 var(--spacing-2);
+    }
+
+    @include breakpoints.smallerThanTablet {
+      font-size: 1.25rem;
+    }
+  }
+}
+
+.starSignContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-4);
+
+  @include breakpoints.smallerThanDesktop {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include breakpoints.smallerThanTablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include breakpoints.smallerThanMobileL {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }

@@ -1,1 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 12 12"><defs><clipPath id="prefix__a"><path d="M0 0h80.398v80.398H0zm0 0"/></clipPath></defs><g clip-path="url(#prefix__a)" fill="none" stroke-width="40.201" transform="translate(0 .15) scale(.14925)" stroke="#000" stroke-linejoin="round" stroke-linecap="round"><path d="M11.605 35.293a16.753 16.753 0 010-23.688A16.753 16.753 0 0123.45 6.7c9.25 0 16.75 7.5 16.75 16.75V73.7M40.2 23.45c0-9.25 7.5-16.75 16.75-16.75A16.753 16.753 0 0173.7 23.45c0 4.44-1.766 8.702-4.907 11.843" stroke-width="4.0201"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 12 12">
+    <defs>
+        <clipPath id="prefix__a">
+            <path d="M0 0h80.398v80.398H0zm0 0" />
+        </clipPath>
+    </defs>
+    <g clip-path="url(#prefix__a)" fill="none" stroke-width="40.201" transform="translate(0 .15) scale(.14925)"
+        stroke="#000" stroke-linejoin="round" stroke-linecap="round">
+        <path
+            d="M11.605 35.293a16.753 16.753 0 010-23.688A16.753 16.753 0 0123.45 6.7c9.25 0 16.75 7.5 16.75 16.75V73.7M40.2 23.45c0-9.25 7.5-16.75 16.75-16.75A16.753 16.753 0 0173.7 23.45c0 4.44-1.766 8.702-4.907 11.843"
+            stroke-width="4.0201" />
+    </g>
+</svg>

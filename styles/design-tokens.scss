@@ -1,34 +1,43 @@
 :root {
   // Font weights
-  --font-weight-light: 300;
-  --font-weight-normal: 400;
-  --font-weight-medium: 500;
-  --font-weight-semi-bold: 600;
-  --font-weight-bold: 700;
+  --font-weight-400: 400;
+  --font-weight-500: 500;
+  --font-weight-600: 600;
+  --font-weight-700: 700;
 
-  // Line heights
-  --line-height-normal: 1.5rem;
-  --line-height-tight: 1.125rem;
-  --line-height-loose: 1.75rem;
-  --line-height-reset: 1rem;
-
-  // Spacings
-  --spacing-1: 0rem;
-  --spacing-2: 0.125rem;
-  --spacing-3: 0.25rem;
-  --spacing-4: 0.5rem;
-  --spacing-5: 0.75rem;
-  --spacing-6: 1rem;
-  --spacing-7: 1.25rem;
-  --spacing-8: 1.5rem;
-  --spacing-9: 2rem;
+  // Spacings: 1 = 0.25rem
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-5: 1.25rem;
+  --spacing-6: 1.5rem;
+  --spacing-7: 1.75rem;
+  --spacing-8: 2rem;
+  --spacing-9: 2.25rem;
   --spacing-10: 2.5rem;
-  --spacing-11: 3rem;
-  --spacing-12: 3.5rem;
-  --spacing-13: 4rem;
-  --spacing-14: 4.5rem;
-  --spacing-15: 6rem;
-  --spacing-16: 8rem;
+  --spacing-11: 2.75rem;
+  --spacing-12: 3rem;
+  --spacing-13: 3.25rem;
+  --spacing-14: 3.5rem;
+  --spacing-15: 3.75rem;
+  --spacing-16: 4rem;
+  --spacing-17: 4.25rem;
+  --spacing-18: 4.5rem;
+  --spacing-19: 4.75rem;
+  --spacing-20: 5rem;
+  --spacing-21: 5.25rem;
+  --spacing-22: 5.5rem;
+  --spacing-23: 5.75rem;
+  --spacing-24: 6rem;
+  --spacing-25: 6.25rem;
+  --spacing-26: 6.5rem;
+  --spacing-27: 6.75rem;
+  --spacing-28: 7rem;
+  --spacing-29: 7.25rem;
+  --spacing-30: 7.5rem;
+  --spacing-31: 7.75rem;
+  --spacing-32: 8rem;
 
   // Border radiuses
   --border-radius-none: 0;
@@ -73,4 +82,14 @@
   --transition-slow: 0.6s;
 
   // TODO: add colors here
+
+  --color-default: #000000;
+  --color-inverse: #ffffff;
+  --color-bg-highlight: #cccccc;
+
+  @media (prefers-color-scheme: dark) {
+    --color-default: #ffffff;
+    --color-inverse: #000000;
+    --color-bg-highlight: #333333;
+  }
 }

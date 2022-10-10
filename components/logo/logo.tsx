@@ -2,12 +2,12 @@ import styles from "./logo.module.scss";
 
 const HorribleScopeLogo: React.FC = () => {
   return (
-    <h1>
+    <h1 className={styles.logo}>
       Hor
       <span className={styles.outer}>
         (<span className={styles.innerTitle}>-ri ble</span>)
       </span>
-      scope
+      <span>scope</span>
     </h1>
   );
 };
