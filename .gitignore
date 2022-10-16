@@ -1,0 +1,13 @@
+node_modules
+
+# vscode
+/.vscode/
+
+# next.js
+/.next/
+/out/
+tsconfig.tsbuildinfo
+
+yarn-error.log
+.env
+

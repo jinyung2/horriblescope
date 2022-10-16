@@ -1,0 +1,31 @@
+@use "@styles/breakpoints";
+
+.logo {
+  @include breakpoints.smallerThanMobileL {
+    font-size: 3rem;
+  }
+}
+
+.outer {
+  font-size: 2.75rem;
+  @include breakpoints.smallerThanMobileL {
+    font-size: 2.25rem;
+  }
+}
+
+.innerTitle {
+  white-space: break-spaces;
+  position: relative;
+  display: inline-block;
+  max-width: 60px;
+  font-size: 2.25rem;
+  word-wrap: break-word;
+  line-height: 0.75;
+  top: 8px;
+
+  @include breakpoints.smallerThanMobileL {
+    font-size: 1.5rem;
+    max-width: 40px;
+    top: 4px;
+  }
+}
