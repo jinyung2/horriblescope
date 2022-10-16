@@ -1,0 +1,16 @@
+@use "@styles/breakpoints";
+
+.container {
+  max-width: 1440px;
+  width: 100%;
+  padding: var(--spacing-8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  display: block;
+
+  @include breakpoints.smallerThanTablet {
+    padding: var(--spacing-4);
+  }
+}

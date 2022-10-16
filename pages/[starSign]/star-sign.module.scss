@@ -1,0 +1,33 @@
+.horoscopeContainer {
+  padding: var(--spacing-8);
+}
+
+.horoscopeTitle {
+  margin-bottom: var(--spacing-12);
+}
+
+.horoscope {
+  font-size: 2rem;
+  line-height: 1.5;
+  letter-spacing: 2px;
+}
+
+.blockQuote {
+  font-size: 12rem;
+  font-weight: var(--font-weight-700);
+  position: absolute;
+  line-height: 1;
+  opacity: 0.25;
+}
+
+.leftQuote {
+  margin-top: calc(-1 * var(--spacing-9));
+}
+
+.rightQuote {
+  margin-left: calc(-1 * var(--spacing-9));
+}
+
+.horoscopeText {
+  padding-left: var(--spacing-8);
+}
