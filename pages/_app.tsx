@@ -4,6 +4,8 @@ import "../styles/design-tokens.scss";
 import type { AppProps } from "next/app";
 import { DefaultSeo } from "next-seo";
 
+import { GoogleAnalytics } from "nextjs-google-analytics";
+
 function MyApp({ Component, pageProps }: AppProps) {
   const defaultTitle = "Hor(rible)scope";
   const defaultDescription =
@@ -11,6 +13,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <>
+      <GoogleAnalytics strategy="afterInteractive" trackPageViews />
       <DefaultSeo
         title={defaultTitle}
         description={defaultDescription}
