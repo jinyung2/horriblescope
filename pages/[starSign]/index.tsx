@@ -93,11 +93,15 @@ export const getStaticProps: GetStaticProps<
     horoscopeText = await horoscopeTextPromise.text();
   }
 
+  dayjs.extend(utc);
+  dayjs.extend(timezone);
+
   // seconds until 12AM PST for new horoscopes
   const revalidateTime = dayjs()
+    .tz("America/New_York")
     .add(1, "day")
     .startOf("d")
-    .diff(dayjs(), "seconds");
+    .diff(dayjs().tz("America/New_York"), "seconds");
 
   console.log({ revalidateTime });
 
