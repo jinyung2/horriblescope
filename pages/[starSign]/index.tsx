@@ -3,6 +3,8 @@ import { starSignList } from "../../utils/constants";
 import { capitalize } from "../../utils/utils";
 import { Configuration, OpenAIApi } from "openai";
 import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+import timezone from "dayjs/plugin/timezone";
 import MainLayout from "@layouts/main-layout";
 
 import styles from "./star-sign.module.scss";
