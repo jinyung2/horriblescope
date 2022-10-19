@@ -3,8 +3,6 @@ import { starSignList } from "../../utils/constants";
 import { capitalize } from "../../utils/utils";
 import { Configuration, OpenAIApi } from "openai";
 import dayjs from "dayjs";
-import utc from "dayjs/plugin/utc";
-import timezone from "dayjs/plugin/timezone";
 import MainLayout from "@layouts/main-layout";
 
 import styles from "./star-sign.module.scss";
@@ -53,10 +51,6 @@ export const getStaticProps: GetStaticProps<
   StarSignProps,
   StarSignSlugParams
 > = async (context) => {
-  dayjs.extend(utc);
-  dayjs.extend(timezone);
-  dayjs.tz.setDefault("America/Los_Angeles");
-
   const starSign = context?.params?.starSign;
 
   if (!starSign) {
@@ -78,7 +72,7 @@ export const getStaticProps: GetStaticProps<
     try {
       const completion = await openai.createCompletion({
         model: "text-davinci-002",
-        prompt: `Write an offensive and funny horoscope prediction for a ${starSign} zodiac sign with profanity and make it relevant to current events.`,
+        prompt: `Write an offensive and funny horoscope prediction for a ${starSign} zodiac sign with profanity, and make it relevant to current events.`,
         max_tokens: 2048,
         temperature: 1,
         frequency_penalty: 1,
@@ -106,7 +100,6 @@ export const getStaticProps: GetStaticProps<
     .diff(dayjs(), "seconds");
 
   console.log({ revalidateTime });
-  console.log("Current timestamp:", dayjs());
 
   return {
     props: {
