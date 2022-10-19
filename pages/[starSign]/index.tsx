@@ -3,6 +3,8 @@ import { starSignList } from "../../utils/constants";
 import { capitalize } from "../../utils/utils";
 import { Configuration, OpenAIApi } from "openai";
 import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+import timezone from "dayjs/plugin/timezone";
 import MainLayout from "@layouts/main-layout";
 
 import styles from "./star-sign.module.scss";
@@ -93,11 +95,15 @@ export const getStaticProps: GetStaticProps<
     horoscopeText = await horoscopeTextPromise.text();
   }
 
+  dayjs.extend(utc);
+  dayjs.extend(timezone);
+
   // seconds until 12AM PST for new horoscopes
   const revalidateTime = dayjs()
+    .tz("America/New_York")
     .add(1, "day")
     .startOf("d")
-    .diff(dayjs(), "seconds");
+    .diff(dayjs().tz("America/New_York"), "seconds");
 
   console.log({ revalidateTime });
 
