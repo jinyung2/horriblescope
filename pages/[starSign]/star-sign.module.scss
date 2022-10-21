@@ -1,15 +1,45 @@
+@use "@styles/breakpoints";
+
 .horoscopeContainer {
   padding: var(--spacing-8);
+
+  @include breakpoints.smallerThanTablet {
+    padding: var(--spacing-4);
+  }
+
+  @include breakpoints.smallerThanMobileL {
+    padding: var(--spacing-4) 0;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-4);
 }
 
 .horoscopeTitle {
-  margin-bottom: var(--spacing-12);
+  padding: var(--spacing-6) 0;
+
+  @include breakpoints.smallerThanTablet {
+    padding: var(--spacing-3) 0;
+    font-size: 3rem;
+  }
+
+  @include breakpoints.smallerThanMobileL {
+    font-size: 2.25rem;
+  }
 }
 
 .horoscope {
   font-size: 2rem;
   line-height: 1.5;
   letter-spacing: 2px;
+
+  @include breakpoints.smallerThanTablet {
+    font-size: 1.5rem;
+  }
 }
 
 .blockQuote {
