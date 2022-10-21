@@ -19,7 +19,7 @@ const StarSignPage: NextPage<StarSignProps> = ({ starSign, horoscopeText }) => {
   return (
     <MainLayout
       title={`${starSign} | Hor(rible)scope`}
-      metaDescription={`Today's horrible horoscope, send it to your ${starSign} friend.`}
+      metaDescription={`Today's horrible horoscope prediction, send it to your ${starSign} friend.`}
     >
       {/* Add FAQ Page json-LD to SEO here */}
       <article className={styles.horoscopeContainer}>
@@ -27,7 +27,7 @@ const StarSignPage: NextPage<StarSignProps> = ({ starSign, horoscopeText }) => {
           <h1 className={styles.horoscopeTitle}>{starSign}</h1>
           <ShareButtons
             title={`${starSign} | Hor(rible)scope`}
-            text={`Horrible, AI-generated, horoscope predictions for ${starSign}s`}
+            text={`Horrible, AI-generated, horoscope predictions for the ${starSign} Zodiac Signs`}
           />
         </div>
         <p className={styles.horoscope}>
