@@ -7,6 +7,7 @@ import { ONE_DAY_IN_SECONDS, starSignList } from "../utils/constants";
 import StarSignCard from "../components/card/star-sign.card";
 import MainLayout from "@layouts/main-layout";
 import { getRandomInt } from "../utils/utils";
+import ShareButtons from "@components/share";
 
 type HomeProps = {
   randomZodiac: string;
@@ -26,6 +27,12 @@ const Home: NextPage<HomeProps> = ({ randomZodiac }) => {
           </strong>{" "}
           friend.
         </h6>
+      </section>
+      <section className={styles.shareButtonsContainer}>
+        <ShareButtons
+          title="Hor(rible)scope"
+          text="Horrible, AI-generated, horoscope predictions"
+        />
       </section>
       <article className={styles.starSignContainer}>
         {starSignList.map(({ sign }) => (

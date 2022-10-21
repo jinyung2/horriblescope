@@ -8,15 +8,17 @@ $starsign-dimension: 32px;
   transition: all 0.25s;
   height: fit-content;
 
-  &:hover {
-    background-color: var(--color-default);
-    color: var(--color-inverse);
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--color-default);
+      color: var(--color-inverse);
 
-    svg {
-      stroke: var(--color-inverse);
-
-      path {
+      svg {
         stroke: var(--color-inverse);
+
+        path {
+          stroke: var(--color-inverse);
+        }
       }
     }
   }

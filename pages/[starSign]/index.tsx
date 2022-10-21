@@ -9,6 +9,7 @@ import MainLayout from "@layouts/main-layout";
 
 import styles from "./star-sign.module.scss";
 import cx from "classnames";
+import ShareButtons from "@components/share";
 
 type StarSignProps = {
   starSign: string;
@@ -22,7 +23,13 @@ const StarSignPage: NextPage<StarSignProps> = ({ starSign, horoscopeText }) => {
     >
       {/* Add FAQ Page json-LD to SEO here */}
       <article className={styles.horoscopeContainer}>
-        <h1 className={styles.horoscopeTitle}>{starSign}</h1>
+        <div className={styles.header}>
+          <h1 className={styles.horoscopeTitle}>{starSign}</h1>
+          <ShareButtons
+            title={`${starSign} | Hor(rible)scope`}
+            text={`Horrible, AI-generated, horoscope predictions for ${starSign}s`}
+          />
+        </div>
         <p className={styles.horoscope}>
           <span className={cx(styles.blockQuote, styles.leftQuote)}>
             &ldquo;
@@ -74,7 +81,7 @@ export const getStaticProps: GetStaticProps<
     try {
       const completion = await openai.createCompletion({
         model: "text-davinci-002",
-        prompt: `Write an offensive and funny horoscope prediction for a ${starSign} zodiac sign with profanity, and make it relevant to current events.`,
+        prompt: `Write an offensive and funny horoscope prediction for a ${starSign} zodiac sign. Make it relevant to current events and use profanity.`,
         max_tokens: 2048,
         temperature: 1,
         frequency_penalty: 1,
@@ -100,16 +107,17 @@ export const getStaticProps: GetStaticProps<
 
   // seconds until 12AM PST for new horoscopes
   const revalidateTime = dayjs()
-    .tz("America/New_York")
+    .tz("America/Los_Angeles")
     .add(1, "day")
     .startOf("d")
-    .diff(dayjs().tz("America/New_York"), "seconds");
+    .diff(dayjs().tz("America/Los_Angeles"), "seconds");
 
   console.log({ revalidateTime });
 
   return {
     props: {
       starSign: capitalizedStarSign,
+      currentTime: dayjs().tz("America/Los_Angeles").unix(),
       horoscopeText,
     },
     // calculate the time to midnight PST and set as revalidate

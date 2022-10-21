@@ -11,3 +11,4 @@ tsconfig.tsbuildinfo
 yarn-error.log
 .env*
 
+.DS_Store

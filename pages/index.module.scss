@@ -10,7 +10,6 @@
   h6 {
     margin: 0;
     margin-top: var(--spacing-4);
-    margin-bottom: var(--spacing-8);
 
     strong {
       background: var(--color-bg-highlight);
@@ -25,6 +24,7 @@
 }
 
 .starSignContainer {
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: var(--spacing-4);
@@ -40,4 +40,11 @@
   @include breakpoints.smallerThanMobileL {
     grid-template-columns: repeat(1, 1fr);
   }
+}
+
+.shareButtonsContainer {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: var(--spacing-4);
 }
