@@ -5,7 +5,6 @@ const { SitemapStream, streamToPromise } = require("sitemap");
 const { Readable } = require("stream");
 
 const SiteMapFunc = async (req: NextApiRequest, res: NextApiResponse) => {
-  // An array with your links
   const links = [
     { url: "/", changefreq: "daily", priority: 1.0 },
     ...starSignList.map(({ sign }) => ({

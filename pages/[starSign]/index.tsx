@@ -21,7 +21,6 @@ const StarSignPage: NextPage<StarSignProps> = ({ starSign, horoscopeText }) => {
       title={`${starSign} | Hor(rible)scope`}
       metaDescription={`Today's horrible horoscope prediction, send it to your ${starSign} friend.`}
     >
-      {/* Add FAQ Page json-LD to SEO here */}
       <article className={styles.horoscopeContainer}>
         <div className={styles.header}>
           <h1 className={styles.horoscopeTitle}>{starSign}</h1>
