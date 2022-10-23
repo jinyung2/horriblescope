@@ -1,0 +1,23 @@
+@use "styles/breakpoints";
+
+.donationButton {
+  cursor: pointer;
+  background: var(--color-inverse);
+  border: 2px solid var(--color-default);
+  margin: 0;
+  padding: var(--spacing-1) var(--spacing-4);
+  border-radius: var(--border-radius-pill);
+  font-family: inherit;
+  font-weight: var(--font-weight-700);
+  font-size: 1rem;
+  transition: all 0.2s;
+  line-height: 1.25;
+
+  @media (hover: hover) {
+    &:hover {
+      background: var(--color-default);
+      color: var(--color-inverse);
+      transform: translateY(2px);
+    }
+  }
+}
