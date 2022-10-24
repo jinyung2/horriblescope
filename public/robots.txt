@@ -1,4 +1,4 @@
-Sitemap: https://domain.com/api/posts-sitemap
+Sitemap: https://horriblescope.com/api/sitemap
 
 User-agent: *
 Allow: /*
