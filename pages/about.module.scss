@@ -1,0 +1,28 @@
+@use "@styles/breakpoints";
+
+.aboutPage {
+  text-align: left;
+  width: 100%;
+  padding: var(--spacing-8);
+
+  @include breakpoints.smallerThanTablet {
+    padding: var(--spacing-4);
+  }
+
+  @include breakpoints.smallerThanMobileL {
+    padding: var(--spacing-4) 0;
+  }
+
+  p {
+    font-size: 1.25rem;
+
+    a {
+      text-decoration: underline;
+    }
+  }
+}
+
+.shareButtonsContainer {
+  display: flex;
+  justify-content: flex-end;
+}
