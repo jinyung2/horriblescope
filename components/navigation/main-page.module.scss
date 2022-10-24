@@ -1,0 +1,19 @@
+.backLink {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-1);
+  transition: all 0.2s;
+  margin: var(--spacing-2) 0;
+
+  span {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      transform: translateX(3px);
+    }
+  }
+}

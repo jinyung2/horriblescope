@@ -10,6 +10,7 @@ import MainLayout from "@layouts/main-layout";
 import styles from "./star-sign.module.scss";
 import cx from "classnames";
 import ShareButtons from "@components/share";
+import MainPageNavigationButton from "@components/navigation/main-page";
 
 type StarSignProps = {
   starSign: string;
@@ -22,6 +23,7 @@ const StarSignPage: NextPage<StarSignProps> = ({ starSign, horoscopeText }) => {
       metaDescription={`Today's horrible horoscope prediction, send it to your ${starSign} friend.`}
     >
       <article className={styles.horoscopeContainer}>
+        <MainPageNavigationButton />
         <div className={styles.header}>
           <h1 className={styles.horoscopeTitle}>{starSign}</h1>
           <ShareButtons

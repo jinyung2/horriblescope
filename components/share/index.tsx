@@ -13,7 +13,7 @@ const TOAST_CLOSE_TIME_MS = 5000;
 
 type ShareButtonsProps = {
   title: string;
-  text: string;
+  text?: string;
   url?: string;
 };
 const ShareButtons: React.FC<ShareButtonsProps> = ({ title, text, url }) => {
