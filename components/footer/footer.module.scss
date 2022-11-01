@@ -21,7 +21,7 @@
 }
 
 .yachtButton {
-  @include breakpoints.smallerThanTablet {
+  @include breakpoints.smallerThanMobileL {
     display: none;
   }
 }
