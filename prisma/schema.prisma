@@ -11,3 +11,24 @@ datasource db {
 }
 
 // define database schema here
+model Zodiac {
+  id        String     @id @default(cuid())
+  sign      ZodiacSign
+  horoscope String
+  createdAt DateTime   @default(now())
+}
+
+enum ZodiacSign {
+  ARIES
+  TAURUS
+  GEMINI
+  CANCER
+  LEO
+  VIRGO
+  LIBRA
+  SCORPIO
+  SAGITTARIUS
+  CAPRICORN
+  AQUARIUS
+  PISCES
+}

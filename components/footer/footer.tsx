@@ -9,8 +9,8 @@ const Footer = () => {
         {" "}
         Made with 🧂 by <strong>Jin</strong>
         <span className={styles.divider}>|</span>
-        <Link href="/about">
-          <a className={styles.aboutLink}>About</a>
+        <Link href="/about" className={styles.aboutLink}>
+          About
         </Link>
       </div>
       <div className={styles.donationButtonsContainer}>
