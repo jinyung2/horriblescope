@@ -9,6 +9,8 @@ import MainLayout from "@layouts/main-layout";
 import { getRandomInt } from "../utils/utils";
 import ShareButtons from "@components/share";
 
+import prisma from "../prisma/prisma";
+
 type HomeProps = {
   randomZodiac: string;
 };
@@ -43,7 +45,7 @@ const Home: NextPage<HomeProps> = ({ randomZodiac }) => {
   );
 };
 
-export const getStaticProps: GetStaticProps<HomeProps> = () => {
+export const getStaticProps: GetStaticProps<HomeProps> = async () => {
   const randomIndex = getRandomInt(0, 12);
   const randomZodiac = starSignList[randomIndex].sign;
 

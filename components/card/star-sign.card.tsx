@@ -13,12 +13,14 @@ const StarSignCard: React.FC<StarSignCardProps> = ({ displayName }) => {
   return (
     <div className={styles.starSignCard}>
       <Link
-        className={styles.starSignLink}
         href={Routes.starSign(displayName.toLowerCase()).index}
         passHref
+        className={styles.starSignLink}
       >
-        <h6>{displayName}</h6>
-        <StarSignSvg starSign={displayName} />
+        <>
+          <h6>{displayName}</h6>
+          <StarSignSvg starSign={displayName} />
+        </>
       </Link>
     </div>
   );
