@@ -18,7 +18,8 @@
       "@styles/*": ["./styles/*"],
       "@components/*": ["./components/*"],
       "@images/*": ["./public/images/*"],
-      "@layouts/*": ["./layouts/*"]
+      "@layouts/*": ["./layouts/*"],
+      "@db/*": ["./prisma/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/[starSign]"],
