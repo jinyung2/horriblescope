@@ -12,6 +12,9 @@ import cx from "classnames";
 import ShareButtons from "@components/share";
 import MainPageNavigationButton from "@components/navigation/main-page";
 
+import prisma from "@db/prisma";
+import { ZodiacSign } from "@prisma/client";
+
 type StarSignProps = {
   starSign: string;
   horoscopeText: string;
@@ -67,7 +70,7 @@ export const getStaticProps: GetStaticProps<
     return { notFound: true };
   }
 
-  const capitalizedStarSign = capitalize(starSign);
+  const capitalizedStarSign = capitalize(starSign) as ZodiacSign;
 
   let horoscopeText;
 
@@ -83,7 +86,7 @@ export const getStaticProps: GetStaticProps<
       const completion = await openai.createCompletion({
         model: "text-davinci-002",
         prompt: `Write an offensive and funny horoscope prediction for a ${starSign} zodiac sign. Make it relevant to current events and use profanity.`,
-        max_tokens: 2048,
+        max_tokens: 1024,
         temperature: 1,
         frequency_penalty: 1,
         presence_penalty: 1,
@@ -92,6 +95,14 @@ export const getStaticProps: GetStaticProps<
       horoscopeText =
         completion.data.choices?.[0].text ??
         `${starSign} doesn't even deserve a horoscope for today. Go waste your time somewhere else.`;
+
+      // insert horoscope into db!
+      await prisma.zodiac.create({
+        data: {
+          sign: capitalizedStarSign,
+          horoscope: horoscopeText,
+        },
+      });
     } catch (err) {
       return { notFound: true };
     }
