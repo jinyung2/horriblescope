@@ -84,12 +84,15 @@ export const getStaticProps: GetStaticProps<
 
     try {
       const completion = await openai.createCompletion({
-        model: "text-davinci-002",
-        prompt: `Write an offensive and funny horoscope prediction for a ${starSign} zodiac sign. Make it relevant to current events and use profanity.`,
+        model: "gpt-3.5-turbo-instruct",
+        prompt: `Write an offensive, satirical and funny horoscope for a ${starSign} zodiac sign. Use lots of profanity, be as vulgar as possible. Keep it to within 250 characters.
+        `,
         max_tokens: 1024,
+        top_p: 1,
         temperature: 1,
         frequency_penalty: 1,
         presence_penalty: 1,
+        stop: ["#", "#retrograde"],
       });
 
       horoscopeText =
@@ -123,8 +126,6 @@ export const getStaticProps: GetStaticProps<
     .add(1, "day")
     .startOf("d")
     .diff(dayjs().tz("America/Los_Angeles"), "seconds");
-
-  console.log({ revalidateTime });
 
   return {
     props: {
